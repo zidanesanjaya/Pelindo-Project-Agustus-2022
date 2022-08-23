@@ -1,4 +1,27 @@
+## INSTALASI JIKA MELAKUKAN DOWNLOAD ATAU CLONE PROJECT PERKAPALAN
+
+- Lakukan Clone Atau Download
+- Letakan Dalam Folder htdocs
+- pada command prompt pada path project ini jalankan
+  - Ubah env.example ke .env dan sesuaikan config databasenya
+  - Composer Install
+  - php artisan key:generate
+  - npm run build (Laravel 9 With Vite)
+  - php artisan serve
+
+## ROLE :
+
+- ADMIN (**CRUD**)
+- USER
+
+## TABLE : 
+
+- User (important field : username , password)
+- Kapal (nama_kapal , schedule , kedatangan , keberangkatan , status)
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
