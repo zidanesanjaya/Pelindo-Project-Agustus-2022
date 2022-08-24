@@ -78,7 +78,14 @@
         @csrf
             <div class="form-group mb-3">
                 <label for="nama_kapal">Nama Kapal</label>
-                <input type="text" class="form-control" name="nama_kapal" id="nama_kapal">
+                <select name="nama_kapal" id="nama_kapal" class="form-control">
+                    <option value="Kapal 1" selected>Kapal 1</option>
+                    <option value="Kapal 2" >Kapal 2</option>
+                    <option value="Kapal 1" >Kapal 3</option>
+                    <option value="Kapal 2" >Kapal 4</option>
+                    <option value="Kapal 2" >Kapal 5</option>
+                </select>
+                <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
             <div class="form-group mb-3">
                 <label for="schedule">Schedule</label>
@@ -99,13 +106,12 @@
                     <option value="Landed">Landed</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
+        </form>
         </div>
     </div>
     </div>
