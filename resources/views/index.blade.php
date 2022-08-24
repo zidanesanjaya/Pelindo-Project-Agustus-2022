@@ -41,7 +41,7 @@
 						</tr>
 						@empty
 						<tr>
-							<td colspan="12">There are no users.</td>
+							<td colspan="12">There are no Ship.</td>
 						</tr>
 						@endforelse 
 					</tbody>
