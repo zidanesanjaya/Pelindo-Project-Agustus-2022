@@ -20,23 +20,17 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Manage <b>Ship</b></h2>
+						<h2>Manage <b>ss</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<button class="btn btn-success" data-toggle="modal" data-bs-target="#addEmployeeModal"><i class="material-icons">&#xE147;</i> <span>Add New Ship</span></button>
+						<a href="{{route('create_page')}}"class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Add New ss</span></a>
 					</div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-						<th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-						</th>
-                        <th>Nama Kapal</th>
+                        <th colspan="3">Nama Kapal</th>
                         <th>Schedule</th>
 						<th>Keberangkatan</th>
                         <th>Kedatangan</th>
@@ -45,27 +39,32 @@
                     </tr>
                 </thead>
                 <tbody>
+					@forelse($ship as $ss)
                     <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-						</td>
-                        <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-						<td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
-						<td>(171) 555-2222</td>
+                        <td colspan="3">{{$ss->nama_kapal}}</td>
+                        <td>{{$ss->schedule}}</td>
+						<td>{{$ss->kedatangan}}</td>
+                        <td>{{$ss->keberangkatan}}</td>
+						<td>{{$ss->status}}</td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <a href="{{route('edit',$ss->id)}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							@csrf
+                    		@method('DELETE')
+                            <a href="{{route('delete',$ss->id) }}" type="submit" class="delete"><i class="material-icons" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
+					@empty
+					<tr>
+						<td colspan="3">There are no users.</td>
+					</tr>
+					@endforelse 
                 </tbody>
             </table>
+			{!! $ship->links() !!}
+
         </div>
     </div>
+	
 	
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Ship;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $ship =DB::table('Ship')->paginate(5);
+    return view('index',['ship'=>$ship]);
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'landing']);
+Route::get('/create_page', [App\Http\Controllers\HomeController::class, 'create_page'])->name('create_page');
+Route::get('/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit_page'])->name('edit');
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/index', [App\Http\Controllers\ShipController::class, 'index'])->name('home');
+
+Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
+Route::post('/update/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+
+
+

@@ -31,22 +31,22 @@
 						</tr>
 					</thead>
 					<tbody>
+						@forelse($ship as $s)
 						<tr>
-							<td colspan="2">Thomas Hardy</td>
-							<td>thomashardy@mail.com</td>
-							<td>89 Chiaroscuro Rd, Portland, USA</td>
-							<td>(171) 555-2222</td>
-							<td>Landed</td>
+							<td colspan="2">{{$s->nama_kapal}}</td>
+							<td>{{$s->schedule}}</td>
+							<td>{{$s->kedatangan}}</td>
+							<td>{{$s->keberangkatan}}</td>
+							<td>{{$s->status}}</td>
 						</tr>
+						@empty
 						<tr>
-							<td colspan="2">Dominique Perrier</td>
-							<td>dominiqueperrier@mail.com</td>
-							<td>Obere Str. 57, Berlin, Germany</td>
-							<td>(313) 555-5735</td>
-							<td>Estimate</td>
+							<td colspan="12">There are no users.</td>
 						</tr>
+						@endforelse 
 					</tbody>
 				</table>
+			{{$ship->links()}}
 			</div>
 		</div>
 	</body>

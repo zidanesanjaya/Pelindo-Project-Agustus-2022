@@ -9,6 +9,9 @@ class Ship extends Model
 {
     use HasFactory;
 
+    protected $table = 'Ship';
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'id',
         'nama_kapal',
