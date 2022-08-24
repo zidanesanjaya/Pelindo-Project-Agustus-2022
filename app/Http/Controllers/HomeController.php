@@ -49,9 +49,9 @@ class HomeController extends Controller
         return view('edit',['ship'=>$ship]);   
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
-        $id = $request->get('cat_id');
+        // echo $id;die();
          $ship = Ship::where('id',$id)->delete();
          // echo json_encode($ship);die();
          return redirect()->route('home')

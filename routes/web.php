@@ -32,7 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
 Route::post('/update/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
-Route::get('/delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
 
 
 

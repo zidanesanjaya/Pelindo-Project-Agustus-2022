@@ -50,7 +50,7 @@
                             <a href="{{route('edit',$ss->id)}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							@csrf
                     		@method('DELETE')
-                            <a href="{{route('delete',$ss->id) }}" type="submit" class="delete" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal" data-catid="{{route('delete',$ss->id)}}"><i class="material-icons" title="Delete">&#xE872;</i></a>
+                            <a href="{{route('delete',$ss->id) }}" type="submit" class="delete"><i class="material-icons" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
 					@empty
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <!-- Modal Add-->
+    <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -110,30 +110,7 @@
     </div>
     </div>
 	
-	<!-- Delete Modal HTML -->
-	<div id="deleteEmployeeModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form action="{{route('delete')}}">
-                @csrf
-                @method('DELETE')
-                <input type="hidden" name="id" id="cat_id" value="">
-					<div class="modal-header">						
-						<h4 class="modal-title">Delete Employee</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">					
-						<p>Are you sure you want to delete these Records?</p>
-						<p class="text-warning"><small>This action cannot be undone.</small></p>
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+	
 </body>
 </html>
 @endsection
