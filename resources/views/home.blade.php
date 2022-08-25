@@ -81,9 +81,9 @@
                 <select name="nama_kapal" id="nama_kapal" class="form-control">
                     <option value="Kapal 1" selected>Kapal 1</option>
                     <option value="Kapal 2" >Kapal 2</option>
-                    <option value="Kapal 1" >Kapal 3</option>
-                    <option value="Kapal 2" >Kapal 4</option>
-                    <option value="Kapal 2" >Kapal 5</option>
+                    <option value="Kapal 3" >Kapal 3</option>
+                    <option value="Kapal 4" >Kapal 4</option>
+                    <option value="Kapal 5" >Kapal 5</option>
                 </select>
                 <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
@@ -104,6 +104,7 @@
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
                     <option value="Landed">Landed</option>
+                    <option value="Delay">Delay</option>
                 </select>
             </div>
         </div>
