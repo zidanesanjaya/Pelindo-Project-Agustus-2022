@@ -20,25 +20,32 @@
         @csrf
             <div class="form-group mb-3">
                 <label for="nama_kapal">Nama Kapal</label>
-                <input type="text" class="form-control" name="nama_kapal" id="nama_kapal" value="{{$ship->nama_kapal}}">
+                <select name="nama_kapal" id="nama_kapal" class="form-control">
+                    <option value="Kapal 1" selected>Kapal 1</option>
+                    <option value="Kapal 2" >Kapal 2</option>
+                    <option value="Kapal 3" >Kapal 3</option>
+                    <option value="Kapal 4" >Kapal 4</option>
+                    <option value="Kapal 5" >Kapal 5</option>
+                </select>
             </div>
             <div class="form-group mb-3">
                 <label for="schedule">Schedule</label>
                 <input type="date" class="form-control" name="schedule" id="schedule" value="{{$ship->schedule}}">
             </div>
             <div class="form-group mb-3">
-                <label for="keberangkatan">Keberangkatan</label>
-                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan" value="{{$ship->keberangkatan}}">
-            </div>
-            <div class="form-group mb-3">
                 <label for="kedatangan">Kedatangan</label>
                 <input type="time" class="form-control" name="kedatangan" id="kedatangan" value="{{$ship->kedatangan}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="keberangkatan">Keberangkatan</label>
+                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan" value="{{$ship->keberangkatan}}">
             </div>
             <div class="form-group mb-3">
                 <label for="kedatangan">Status</label>
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
-                    <option value="Landed">Landed</option>
+                    <option value="Leanded">Leanded</option>
+                    <option value="Delay">Delay</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>

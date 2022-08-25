@@ -32,8 +32,8 @@
                     <tr>
                         <th colspan="3">Nama Kapal</th>
                         <th>Schedule</th>
-						<th>Keberangkatan</th>
                         <th>Kedatangan</th>
+						<th>Keberangkatan</th>
 						<th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -42,7 +42,7 @@
 					@forelse($ship as $ss)
                     <tr>
                         <td colspan="3">{{$ss->nama_kapal}}</td>
-                        <td>{{$ss->schedule}}</td>
+                        <td>{{date("d-M-Y", strtotime($ss->schedule))}}</td>
 						<td>{{$ss->kedatangan}}</td>
                         <td>{{$ss->keberangkatan}}</td>
 						<td>{{$ss->status}}</td>
@@ -92,18 +92,18 @@
                 <input type="date" class="form-control" name="schedule" id="schedule">
             </div>
             <div class="form-group mb-3">
-                <label for="keberangkatan">Keberangkatan</label>
-                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan">
-            </div>
-            <div class="form-group mb-3">
                 <label for="kedatangan">Kedatangan</label>
                 <input type="time" class="form-control" name="kedatangan" id="kedatangan">
+            </div>
+            <div class="form-group mb-3">
+                <label for="keberangkatan">Keberangkatan</label>
+                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan">
             </div>
             <div class="form-group mb-3">
                 <label for="kedatangan">Status</label>
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
-                    <option value="Landed">Landed</option>
+                    <option value="Leanded">Leanded</option>
                     <option value="Delay">Delay</option>
                 </select>
             </div>

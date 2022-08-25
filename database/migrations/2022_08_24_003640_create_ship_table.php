@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->text('nama_kapal');
             $table->date('schedule');
-            $table->date('kedatangan');
-            $table->date('keberangkatan');
+            $table->time('kedatangan');
+            $table->time('keberangkatan');
             $table->text('status');
             $table->timestamps();
         });
