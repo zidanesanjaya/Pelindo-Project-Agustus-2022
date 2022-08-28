@@ -21,6 +21,18 @@ Route::get('/', function () {
     return view('index',['ship'=>$ship]);
 });
 
+//kedatangan
+Route::get('/kd', function () {
+    $ship =DB::table('Ship')->paginate(5);
+    return view('kedatangan',['ship'=>$ship]);
+});
+
+//keberangkatan
+Route::get('/kb', function () {
+    $ship =DB::table('Ship')->paginate(5);
+    return view('keberangkatan',['ship'=>$ship]);
+});
+
 Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'landing']);

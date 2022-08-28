@@ -15,13 +15,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
 	<body>
-		<div class="container pt-5">
-			<div class="position-absolute top-0 start-0">
-				<a href="{{ url('/kd') }}"><button type="button" class="btn btn-info position-absolute top-0 start-0">Kedatangan</button></a>
-			</div>
-			<div class="position-absolute top-0 end-0">
-				<a href="{{ url('/kb') }}"><button type="button" class="btn btn-info position-absolute top-0 end-0">Keberangkatan</button></a>
-		</div>
+		<div class="container">
 			<div class="table-wrapper">
 				<div class="table-title" style="text-align: center;">
 					<h2>Manage <b>Ship</b></h2>
@@ -32,7 +26,6 @@
 							<th colspan="2">Nama Kapal</th>
 							<th>Schedule</th>
 							<th>Kedatangan</th>
-							<th>Keberangkatan</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -42,7 +35,6 @@
 							<td colspan="2">{{$s->nama_kapal}}</td>
 							<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
 							<td>{{$s->kedatangan}}</td>
-							<td>{{$s->keberangkatan}}</td>
 							<td>{{$s->status}}</td>
 						</tr>
 						@empty
