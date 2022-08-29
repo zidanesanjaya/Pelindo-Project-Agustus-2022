@@ -87,7 +87,7 @@
 								<tbody>
 									@forelse($ship_ as $s1)
 									<tr>
-										<td colspan="2">{{$s->nama_kapal}}</td>
+										<td colspan="2">{{$s1->nama_kapal}}</td>
 										<td>{{date("d-M-Y", strtotime($s1->schedule))}}</td>
 										<td>{{$s1->keberangkatan}}</td>
 										<td>{{$s1->status}}</td>

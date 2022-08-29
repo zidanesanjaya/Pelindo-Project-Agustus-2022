@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index()
     {
          //get posts
-        //  $ship = Ship::all();
-         $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(5);
-         $ship1 = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(5);
+         $ship = Ship::all();
+        //  $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(5);
+        //  $ship1 = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(5);
         //  echo json_encode($ship);die();
          return view('home',['ship'=>$ship]);
     }

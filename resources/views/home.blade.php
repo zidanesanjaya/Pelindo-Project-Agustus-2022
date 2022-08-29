@@ -62,7 +62,6 @@
 					@endforelse 
                 </tbody>
             </table>
-			{!! $ship->links() !!}
 
         </div>
     </div>
