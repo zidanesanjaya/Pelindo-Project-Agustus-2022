@@ -35,6 +35,7 @@
                         <th>Kedatangan</th>
 						<th>Keberangkatan</th>
 						<th>Status</th>
+                        <th>Destination</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
 						<td>{{$ss->kedatangan}}</td>
                         <td>{{$ss->keberangkatan}}</td>
 						<td>{{$ss->status}}</td>
+                        <td>{{$ss->destination}}</td>
                         <td>
                             <a href="{{route('edit',$ss->id)}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							@csrf
@@ -70,26 +72,31 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Tambah Kapal</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
         <form action="{{ route('store') }}" method="POST">
         @csrf
             <div class="form-group mb-3">
-                <label for="nama_kapal">Nama Kapal</label>
+                <label for="nama_kapal">Nama Kapal <span class="text-danger">*</span></label>
                 <select name="nama_kapal" id="nama_kapal" class="form-control">
                     <option value="Kapal 1" selected>Kapal 1</option>
                     <option value="Kapal 2" >Kapal 2</option>
                     <option value="Kapal 3" >Kapal 3</option>
                     <option value="Kapal 4" >Kapal 4</option>
                     <option value="Kapal 5" >Kapal 5</option>
+                    <option value="Kapal 6" >Kapal 6</option>
                 </select>
                 <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
             <div class="form-group mb-3">
-                <label for="schedule">Schedule</label>
+                <label for="schedule">Schedule <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule">
+            </div>
+            <div class="form-group mb-3">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" name="destination" id="destination">
             </div>
             <div class="form-group mb-3">
                 <label for="kedatangan">Kedatangan</label>
@@ -100,7 +107,7 @@
                 <input type="time" class="form-control" name="keberangkatan" id="keberangkatan">
             </div>
             <div class="form-group mb-3">
-                <label for="kedatangan">Status</label>
+                <label for="kedatangan">Status <span class="text-danger">*</span></label>
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
                     <option value="Leanded">Leanded</option>

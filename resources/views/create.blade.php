@@ -19,12 +19,16 @@
         <form action="{{ route('store') }}" method="POST">
         @csrf
             <div class="form-group mb-3">
-                <label for="nama_kapal">Nama Kapal</label>
+                <label for="nama_kapal">Nama Kapal <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="nama_kapal" id="nama_kapal">
             </div>
             <div class="form-group mb-3">
-                <label for="schedule">Schedule</label>
+                <label for="schedule">Schedule <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule">
+            </div>
+            <div class="form-group mb-3">
+                <label for="destination">Destination</label>
+                <input type="date" class="form-control" name="destination" id="destination">
             </div>
             <div class="form-group mb-3">
                 <label for="keberangkatan">Keberangkatan</label>
@@ -35,7 +39,7 @@
                 <input type="time" class="form-control" name="kedatangan" id="kedatangan">
             </div>
             <div class="form-group mb-3">
-                <label for="kedatangan">Status</label>
+                <label for="kedatangan">Status <span class="text-danger">*</span></label>
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
                     <option value="Landed">Landed</option>

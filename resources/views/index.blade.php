@@ -51,6 +51,7 @@
 										<th>Schedule</th>
 										<th>Kedatangan</th>
 										<th>Status</th>
+										<th>Destination</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -60,6 +61,7 @@
 										<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
 										<td>{{$s->kedatangan}}</td>
 										<td>{{$s->status}}</td>
+										<td>{{$s->destination}}</td>
 									</tr>
 									@empty
 									<tr>
@@ -79,15 +81,17 @@
 										<th>Schedule</th>
 										<th>Keberangkatan</th>
 										<th>Status</th>
+										<th>Destination</th>
 									</tr>
 								</thead>
 								<tbody>
-									@forelse($ship as $s)
+									@forelse($ship_ as $s1)
 									<tr>
 										<td colspan="2">{{$s->nama_kapal}}</td>
-										<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
-										<td>{{$s->keberangkatan}}</td>
-										<td>{{$s->status}}</td>
+										<td>{{date("d-M-Y", strtotime($s1->schedule))}}</td>
+										<td>{{$s1->keberangkatan}}</td>
+										<td>{{$s1->status}}</td>
+										<td>{{$s1->destination}}</td>
 									</tr>
 									@empty
 									<tr>

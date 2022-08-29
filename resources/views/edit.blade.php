@@ -19,29 +19,27 @@
         <form action="{{ route('update',$ship->id) }}" method="POST">
         @csrf
             <div class="form-group mb-3">
-                <label for="nama_kapal">Nama Kapal</label>
-                <select name="nama_kapal" id="nama_kapal" class="form-control">
-                    <option value="Kapal 1" selected>Kapal 1</option>
-                    <option value="Kapal 2" >Kapal 2</option>
-                    <option value="Kapal 3" >Kapal 3</option>
-                    <option value="Kapal 4" >Kapal 4</option>
-                    <option value="Kapal 5" >Kapal 5</option>
-                </select>
+                <label for="nama_kapal">Nama Kapal <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" value="{{$ship->nama_kapal}}"  disabled>
             </div>
             <div class="form-group mb-3">
-                <label for="schedule">Schedule</label>
+                <label for="schedule">Schedule <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule" value="{{$ship->schedule}}">
             </div>
             <div class="form-group mb-3">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" name="destination" id="destination" value="{{$ship->destination}}">
+            </div>
+            <div class="form-group mb-3">
                 <label for="kedatangan">Kedatangan</label>
-                <input type="time" class="form-control" name="kedatangan" id="kedatangan" value="{{$ship->kedatangan}}">
+                <input type="time" class="form-control" name="kedatangan" id="kedatangan" value="{{$ship->kedatangan}}" onfocus="this.value=''">
             </div>
             <div class="form-group mb-3">
                 <label for="keberangkatan">Keberangkatan</label>
-                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan" value="{{$ship->keberangkatan}}">
+                <input type="time" class="form-control" name="keberangkatan" id="keberangkatan" value="{{$ship->keberangkatan}}" onfocus="this.value=''">
             </div>
             <div class="form-group mb-3">
-                <label for="kedatangan">Status</label>
+                <label for="kedatangan">Status <span class="text-danger">*</span></label>
                 <select name="status" id="status" class="form-control">
                     <option value="Estimate" selected>Estimate</option>
                     <option value="Leanded">Leanded</option>
@@ -51,8 +49,6 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
-	
-	
 </body>
 </html>
 @endsection

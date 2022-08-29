@@ -27,16 +27,10 @@ class HomeController extends Controller
     {
          //get posts
         //  $ship = Ship::all();
-         $ship = DB::table('Ship')->paginate(5);
-         // echo json_encode($ship);die();
+         $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(5);
+         $ship1 = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(5);
+        //  echo json_encode($ship);die();
          return view('home',['ship'=>$ship]);
-    }
-    public function landing()
-    {
-         //get posts
-         $ship = Ship::all();
-         // echo json_encode($ship);die();
-         return view('index',['ship'=>$ship]);
     }
     public function create_page()
     {
@@ -63,8 +57,6 @@ class HomeController extends Controller
         $request->validate([
             'nama_kapal' => 'required',
             'schedule' => 'required',
-            'kedatangan' => 'required',
-            'keberangkatan' => 'required',
             'status' => 'required',
             ]);
 
@@ -74,6 +66,7 @@ class HomeController extends Controller
         $ship->schedule = $request->get('schedule');
         $ship->kedatangan = $request->get('kedatangan');
         $ship->keberangkatan = $request->get('keberangkatan');
+        $ship->destination = $request->get('destination');
         $ship->status = $request->get('status');
 
         $ship->save();
@@ -83,20 +76,17 @@ class HomeController extends Controller
     public function update(Request $request , $id)
     {
         $request->validate([
-            'nama_kapal' => 'required',
             'schedule' => 'required',
-            'kedatangan' => 'required',
-            'keberangkatan' => 'required',
             'status' => 'required',
             ]);
 
         $ship = Ship::all()->where('id',$id)->first();
 
-        $ship->nama_kapal = $request->get('nama_kapal');
         $ship->schedule = $request->get('schedule');
         $ship->kedatangan = $request->get('kedatangan');
         $ship->keberangkatan = $request->get('keberangkatan');
         $ship->status = $request->get('status');
+        $ship->destination = $request->get('destination');
 
         $ship->save();
 
