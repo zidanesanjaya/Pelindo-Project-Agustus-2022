@@ -44,7 +44,7 @@
                 <tbody>
 					@forelse($ship as $ss)
                     <tr>
-                        <td><img src="/img/kapal1.jpg" style="width: 50%; height: width"></td>
+                        <td><img src="/img/kapal1.jpg" style="width: 80%; height: 60%"></td>
                         <td colspan="3">{{$ss->nama_kapal}}</td>
                         <td>{{date("d-M-Y", strtotime($ss->schedule))}}</td>
 						<td>{{$ss->kedatangan}}</td>
