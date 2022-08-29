@@ -30,6 +30,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
+                        <th>Image</th>
                         <th colspan="3">Nama Kapal</th>
                         <th>Schedule</th>
                         <th>Kedatangan</th>
@@ -43,6 +44,7 @@
                 <tbody>
 					@forelse($ship as $ss)
                     <tr>
+                        <td><img src="/img/kapal1.jpg" style="width: 50%; height: width"></td>
                         <td colspan="3">{{$ss->nama_kapal}}</td>
                         <td>{{date("d-M-Y", strtotime($ss->schedule))}}</td>
 						<td>{{$ss->kedatangan}}</td>
