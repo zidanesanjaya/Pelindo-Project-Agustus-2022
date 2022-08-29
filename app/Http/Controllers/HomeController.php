@@ -64,6 +64,7 @@ class HomeController extends Controller
 
         $ship->nama_kapal = $request->get('nama_kapal');
         $ship->schedule = $request->get('schedule');
+        $ship->from = $request->get('from');
         $ship->kedatangan = $request->get('kedatangan');
         $ship->keberangkatan = $request->get('keberangkatan');
         $ship->destination = $request->get('destination');
@@ -84,6 +85,7 @@ class HomeController extends Controller
 
         $ship->schedule = $request->get('schedule');
         $ship->kedatangan = $request->get('kedatangan');
+        $ship->from = $request->get('from');
         $ship->keberangkatan = $request->get('keberangkatan');
         $ship->status = $request->get('status');
         $ship->destination = $request->get('destination');
