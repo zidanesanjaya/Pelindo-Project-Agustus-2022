@@ -27,6 +27,10 @@
                 <input type="date" class="form-control" name="schedule" id="schedule" value="{{$ship->schedule}}">
             </div>
             <div class="form-group mb-3">
+                <label for="from">From</label>
+                <input type="text" class="form-control" name="from" id="from">
+            </div>
+            <div class="form-group mb-3">
                 <label for="destination">Destination</label>
                 <input type="text" class="form-control" name="destination" id="destination" value="{{$ship->destination}}">
             </div>

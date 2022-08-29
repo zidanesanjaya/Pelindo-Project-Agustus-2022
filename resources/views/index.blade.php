@@ -51,7 +51,7 @@
 										<th>Schedule</th>
 										<th>Kedatangan</th>
 										<th>Status</th>
-										<th>Destination</th>
+										<th>From</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -61,7 +61,7 @@
 										<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
 										<td>{{$s->kedatangan}}</td>
 										<td>{{$s->status}}</td>
-										<td>{{$s->destination}}</td>
+										<td>{{$s->from}}</td>
 									</tr>
 									@empty
 									<tr>

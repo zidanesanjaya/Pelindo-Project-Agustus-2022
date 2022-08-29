@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('nama_kapal');
             $table->date('schedule');
+            $table->text('from')->nullable();
             $table->text('destination')->nullable();
             $table->time('kedatangan')->nullable();
             $table->time('keberangkatan')->nullable();

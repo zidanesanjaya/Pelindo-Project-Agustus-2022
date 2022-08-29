@@ -35,6 +35,7 @@
                         <th>Kedatangan</th>
 						<th>Keberangkatan</th>
 						<th>Status</th>
+                        <th>From</th>
                         <th>Destination</th>
                         <th>Actions</th>
                     </tr>
@@ -47,6 +48,7 @@
 						<td>{{$ss->kedatangan}}</td>
                         <td>{{$ss->keberangkatan}}</td>
 						<td>{{$ss->status}}</td>
+                        <td>{{$ss->from}}</td>
                         <td>{{$ss->destination}}</td>
                         <td>
                             <a href="{{route('edit',$ss->id)}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -92,6 +94,10 @@
             <div class="form-group mb-3">
                 <label for="schedule">Schedule <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule">
+            </div>
+            <div class="form-group mb-3">
+                <label for="from">From</label>
+                <input type="text" class="form-control" name="from" id="from">
             </div>
             <div class="form-group mb-3">
                 <label for="destination">Destination</label>
