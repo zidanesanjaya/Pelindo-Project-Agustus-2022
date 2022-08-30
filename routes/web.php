@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Ship;
+use App\Models\Ship_Ex;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -18,32 +19,22 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(10);
-    $ship_ = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(10);    
-    return view('index',['ship'=>$ship , 'ship_' => $ship_]);
+    $ship_ = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(10); 
+    $kapal = Ship_Ex::all();   
+    return view('index',['ship'=>$ship , 'ship_' => $ship_ , 'kapal'=>$kapal]);
 });
-
-// //kedatangan
-// Route::get('/kd', function () {
-//     $ship =DB::table('Ship')->paginate(5);
-//     return view('kedatangan',['ship'=>$ship]);
-// });
-
-// //keberangkatan
-// Route::get('/kb', function () {
-//     $ship =DB::table('Ship')->paginate(5);
-//     return view('keberangkatan',['ship'=>$ship]);
-// });
-
 Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'landing']);
-Route::get('/create_page', [App\Http\Controllers\HomeController::class, 'create_page'])->name('create_page');
+
 Route::get('/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit_page'])->name('edit');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/index', [App\Http\Controllers\ShipController::class, 'index'])->name('home');
 
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
+Route::post('/store_new_ship', [App\Http\Controllers\HomeController::class, 'store_kapal'])->name('store_kapal');
+
 Route::post('/update/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
 Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
 

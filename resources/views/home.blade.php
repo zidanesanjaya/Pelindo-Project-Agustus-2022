@@ -22,8 +22,10 @@
                     <div class="col-sm-6">
 						<h2>Manage <b>Ship</b></h2>
 					</div>
+
 					<div class="col-sm-6">
-						<a href="{{route('create_page')}}"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="material-icons">&#xE147;</i> <span>Add New Ship</span></a>
+                        <a href="#"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><i class="material-icons">&#xE147;</i> <span>Add New Ship</span></a>
+						<a href="#"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="material-icons">&#xE147;</i> <span>Add Ship To List</span></a>
 					</div>
                 </div>
             </div>
@@ -44,7 +46,19 @@
                 <tbody>
 					@forelse($ship as $ss)
                     <tr>
-                        <td><img src="/img/kapal1.jpg" style="width: 80%; height: 60%"></td>
+                        <?php
+                            for ($i=0; $i < sizeof($kapal) ; $i++) { 
+                                if($ss->nama_kapal == $kapal[$i]->nama_kapal ){
+                            ?>
+                                <td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
+                            <?php
+                                }else{
+                            ?>
+								<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
+                            <?php
+                                }
+                            } 
+                        ?>
                         <td colspan="3">{{$ss->nama_kapal}}</td>
                         <td>{{date("d-M-Y", strtotime($ss->schedule))}}</td>
 						<td>{{$ss->kedatangan}}</td>
@@ -84,12 +98,11 @@
             <div class="form-group mb-3">
                 <label for="nama_kapal">Nama Kapal <span class="text-danger">*</span></label>
                 <select name="nama_kapal" id="nama_kapal" class="form-control">
-                    <option value="Kapal 1" selected>Kapal 1</option>
-                    <option value="Kapal 2" >Kapal 2</option>
-                    <option value="Kapal 3" >Kapal 3</option>
-                    <option value="Kapal 4" >Kapal 4</option>
-                    <option value="Kapal 5" >Kapal 5</option>
-                    <option value="Kapal 6" >Kapal 6</option>
+                    @forelse($kapal as $kapal)
+                        <option value="{{$kapal->nama_kapal}}">{{$kapal->nama_kapal}}</option>
+                    @empty
+                        <option>Tidak Ada Kapal</option>
+                    @endforelse
                 </select>
                 <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
@@ -126,6 +139,35 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Tambah Kapal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{{ route('store_kapal') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <div class="form-group mb-3">
+                    <label for="nama">Nama Kapal</label>
+                    <input type="text" class="form-control" name="nama" id="nama">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="path">Logo Kapal</label>
+                    <input type="file" class="form-control" name="path" id="path">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
         </form>
         </div>
     </div>

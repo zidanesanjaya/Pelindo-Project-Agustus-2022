@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ship;
+use App\Models\Ship_Ex;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -27,10 +28,8 @@ class HomeController extends Controller
     {
          //get posts
          $ship = Ship::all();
-        //  $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(5);
-        //  $ship1 = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(5);
-        //  echo json_encode($ship);die();
-         return view('home',['ship'=>$ship]);
+         $kapal = Ship_Ex::all();
+         return view('home',['ship'=>$ship , 'kapal'=>$kapal]);
     }
     public function create_page()
     {
@@ -70,6 +69,24 @@ class HomeController extends Controller
         $ship->destination = $request->get('destination');
         $ship->status = $request->get('status');
 
+        $ship->save();
+
+        return redirect()->route('home');
+    }
+    public function store_kapal(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'path' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        $path = $request->file('path')->store('public/img');
+        $path_name = explode("/",$path);
+
+        $ship = new Ship_Ex();
+
+        $ship->nama_kapal = $request->get('nama');
+        $ship->path_logo = 'storage/img/'.$path_name[2];
+    
         $ship->save();
 
         return redirect()->route('home');

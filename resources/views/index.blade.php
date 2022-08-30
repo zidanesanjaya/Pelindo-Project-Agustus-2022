@@ -47,6 +47,7 @@
 							<table class="table table-striped table-hover">
 								<thead>
 									<tr>
+										<th>Logo</th>
 										<th colspan="2">Nama Kapal</th>
 										<th>Schedule</th>
 										<th>Kedatangan</th>
@@ -57,6 +58,19 @@
 								<tbody>
 									@forelse($ship as $s)
 									<tr>
+									<?php
+										for ($i=0; $i < sizeof($kapal) ; $i++) { 
+											if($s->nama_kapal == $kapal[$i]->nama_kapal ){
+										?>
+											<td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
+										<?php
+											}else{
+										?>
+											<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
+										<?php
+											}
+										} 
+									?>
 										<td colspan="2">{{$s->nama_kapal}}</td>
 										<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
 										<td>{{$s->kedatangan}}</td>
@@ -77,6 +91,7 @@
 						<table class="table table-striped table-hover">
 								<thead>
 									<tr>
+										<th>Logo</th>
 										<th colspan="2">Nama Kapal</th>
 										<th>Schedule</th>
 										<th>Keberangkatan</th>
@@ -87,6 +102,19 @@
 								<tbody>
 									@forelse($ship_ as $s1)
 									<tr>
+									<?php
+										for ($i=0; $i < sizeof($kapal) ; $i++) { 
+											if($s1->nama_kapal == $kapal[$i]->nama_kapal ){
+										?>
+											<td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
+										<?php
+											}else{
+										?>
+											<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
+										<?php
+											}
+										} 
+									?>
 										<td colspan="2">{{$s1->nama_kapal}}</td>
 										<td>{{date("d-M-Y", strtotime($s1->schedule))}}</td>
 										<td>{{$s1->keberangkatan}}</td>
