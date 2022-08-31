@@ -77,7 +77,7 @@ class HomeController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'path' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'path' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1000000',
         ]);
         $path = $request->file('path')->store('public/img');
         $path_name = explode("/",$path);

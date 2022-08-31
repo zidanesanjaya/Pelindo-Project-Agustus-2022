@@ -15,13 +15,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
 	<body>
-		<!-- <div class="container pt-5">
-			<div class="position-absolute top-0 start-0">
-				<a href="{{ url('/kd') }}"><button type="button" class="btn btn-info position-absolute top-0 start-0">Kedatangan</button></a>
-			</div>
-			<div class="position-absolute top-0 end-0">
-				<a href="{{ url('/kb') }}"><button type="button" class="btn btn-info position-absolute top-0 end-0">Keberangkatan</button></a>
-		</div> -->
 			<div class="table-wrapper">
 				<div class="table-title" style="text-align: center;">
 					<h2>Manage <b>Ship</b></h2>
@@ -64,10 +57,6 @@
 										?>
 											<td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
 										<?php
-											}else{
-										?>
-											<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
-										<?php
 											}
 										} 
 									?>
@@ -107,10 +96,6 @@
 											if($s1->nama_kapal == $kapal[$i]->nama_kapal ){
 										?>
 											<td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
-										<?php
-											}else{
-										?>
-											<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
 										<?php
 											}
 										} 

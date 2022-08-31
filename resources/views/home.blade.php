@@ -52,10 +52,6 @@
                             ?>
                                 <td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
                             <?php
-                                }else{
-                            ?>
-								<td><img src="img/not_found.png" style="width: 80%; height: 60%"></td>
-                            <?php
                                 }
                             } 
                         ?>
@@ -157,11 +153,11 @@
             <div class="modal-body">
                 <div class="form-group mb-3">
                     <label for="nama">Nama Kapal</label>
-                    <input type="text" class="form-control" name="nama" id="nama">
+                    <input type="text" class="form-control" name="nama" id="nama" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="path">Logo Kapal</label>
-                    <input type="file" class="form-control" name="path" id="path">
+                    <input type="file" class="form-control" name="path" id="path" required>
                 </div>
             </div>
             <div class="modal-footer">
