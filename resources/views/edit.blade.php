@@ -28,7 +28,7 @@
             </div>
             <div class="form-group mb-3">
                 <label for="from">Dari</label>
-                <input type="text" class="form-control" name="from" id="from">
+                <input type="text" class="form-control" name="from" id="from" value="Balikpapan" readonly>
             </div>
             <div class="form-group mb-3">
                 <label for="destination">Tujuan</label>
