@@ -16,8 +16,25 @@
   
 	<body>
 			<div class="table-wrapper">
-				<div class="table-title" style="text-align: center;">
-					<h2>Manage <b>Ship</b></h2>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="logo_pelindo">
+						<a href="{{url ('http://127.0.0.1:8000/kd')}}"><button type="button" class="btn btn-info">Kedatangan</button></a>
+						</div>
+					</div>
+
+					<div class="col-9">
+						<div class="table-title">
+							<h2>Kapal <b>Pelindo</b></h2>
+						</div>
+					</div>
+
+					<div class="col">
+						<div style="float: right;">
+						<a href="{{url ('http://127.0.0.1:8000/kb')}}"><button type="button" class="btn btn-info">Keberangkatan</button></a>
+						</div>
+					</div>
 				</div>
 
 				<div class="container text-center d-flex align-items-center justify-content-center">

@@ -20,27 +20,27 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Manage <b>Ship</b></h2>
+						<h2>Mengelola <b>Kapal</b></h2>
 					</div>
 
 					<div class="col-sm-6">
-                        <a href="#"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><i class="material-icons">&#xE147;</i> <span>Add New Ship</span></a>
-						<a href="#"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="material-icons">&#xE147;</i> <span>Add Ship To List</span></a>
+                        <a href="#"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><i class="material-icons">&#xE147;</i> <span>Tambahkan Kapal Baru</span></a>
+						<a href="#"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="material-icons">&#xE147;</i> <span>Tambahkan Kapal Ke Daftar</span></a>
 					</div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Image</th>
+                        <th>Logo</th>
                         <th colspan="3">Nama Kapal</th>
-                        <th>Schedule</th>
+                        <th>Jadwal</th>
                         <th>Kedatangan</th>
 						<th>Keberangkatan</th>
 						<th>Status</th>
-                        <th>From</th>
-                        <th>Destination</th>
-                        <th>Actions</th>
+                        <th>Dari</th>
+                        <th>Tujuan</th>
+                        <th>Perubahan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,7 +71,7 @@
                     </tr>
 					@empty
 					<tr>
-						<td colspan="12">There are no Ship.</td>
+						<td colspan="12">Tidak ada Kapal.</td>
 					</tr>
 					@endforelse 
                 </tbody>
@@ -103,15 +103,15 @@
                 <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
             <div class="form-group mb-3">
-                <label for="schedule">Schedule <span class="text-danger">*</span></label>
+                <label for="schedule">Jadwal <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule">
             </div>
             <div class="form-group mb-3">
-                <label for="from">From</label>
+                <label for="from">Dari</label>
                 <input type="text" class="form-control" name="from" id="from">
             </div>
             <div class="form-group mb-3">
-                <label for="destination">Destination</label>
+                <label for="destination">Tujuan</label>
                 <input type="text" class="form-control" name="destination" id="destination">
             </div>
             <div class="form-group mb-3">
@@ -125,14 +125,14 @@
             <div class="form-group mb-3">
                 <label for="kedatangan">Status <span class="text-danger">*</span></label>
                 <select name="status" id="status" class="form-control">
-                    <option value="Estimate" selected>Estimate</option>
-                    <option value="Leanded">Leanded</option>
-                    <option value="Delay">Delay</option>
+                    <option value="Estimasi" selected>Estimasi</option>
+                    <option value="Bersandar">Bersandar</option>
+                    <option value="Tertunda">Tertunda</option>
                 </select>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
         </form>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>

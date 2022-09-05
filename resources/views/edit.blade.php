@@ -23,15 +23,15 @@
                 <input type="text" class="form-control" value="{{$ship->nama_kapal}}"  disabled>
             </div>
             <div class="form-group mb-3">
-                <label for="schedule">Schedule <span class="text-danger">*</span></label>
+                <label for="schedule">Jadwal <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="schedule" id="schedule" value="{{$ship->schedule}}">
             </div>
             <div class="form-group mb-3">
-                <label for="from">From</label>
+                <label for="from">Dari</label>
                 <input type="text" class="form-control" name="from" id="from">
             </div>
             <div class="form-group mb-3">
-                <label for="destination">Destination</label>
+                <label for="destination">Tujuan</label>
                 <input type="text" class="form-control" name="destination" id="destination" value="{{$ship->destination}}">
             </div>
             <div class="form-group mb-3">
@@ -45,9 +45,9 @@
             <div class="form-group mb-3">
                 <label for="kedatangan">Status <span class="text-danger">*</span></label>
                 <select name="status" id="status" class="form-control">
-                    <option value="Estimate" selected>Estimate</option>
-                    <option value="Leanded">Leanded</option>
-                    <option value="Delay">Delay</option>
+                    <option value="Estimasi" selected>Estimasi</option>
+                    <option value="Bersandar">Bersandar</option>
+                    <option value="Tertunda">Tertunda</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
