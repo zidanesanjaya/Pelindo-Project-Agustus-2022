@@ -7,7 +7,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Budi's Projects</title>
+<link rel="icon" href="/img/logo-head.png" type="image/icon type">
+<title>Admin Pelindo</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -50,7 +51,7 @@
                             for ($i=0; $i < sizeof($kapal) ; $i++) { 
                                 if($ss->nama_kapal == $kapal[$i]->nama_kapal ){
                             ?>
-                                <td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
+                                <td><img src="{{$kapal[$i]->path_logo}}" style="width: 150%; height: 150%"></td>
                             <?php
                                 }
                             } 
@@ -100,7 +101,6 @@
                         <option>Tidak Ada Kapal</option>
                     @endforelse
                 </select>
-                <!-- <input type="text" class="form-control" name="nama_kapal" id="nama_kapal"> -->
             </div>
             <div class="form-group mb-3">
                 <label for="schedule">Jadwal <span class="text-danger">*</span></label>

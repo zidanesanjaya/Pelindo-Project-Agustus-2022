@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-	<!-- <meta http-equiv="refresh" content="2"> -->
+	<meta http-equiv="refresh" content="5">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Budi's Projects</title>
+	<link rel="icon" href="/img/logo-head.png" type="image/icon type">
+	<title>Kedatangan</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,7 +55,7 @@
 									for ($i=0; $i < sizeof($kapal) ; $i++) { 
 										if($s->nama_kapal == $kapal[$i]->nama_kapal ){
 									?>
-										<td><img src="{{$kapal[$i]->path_logo}}" style="width: 80%; height: 60%"></td>
+										<td><img src="{{$kapal[$i]->path_logo}}" style="width: 150%; height: 150%"></td>
 									<?php
 										}
 									} 

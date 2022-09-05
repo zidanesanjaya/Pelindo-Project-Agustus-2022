@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Budi Project</title>
+    <link rel="icon" href="/img/logo-head.png" type="image/icon type">
+    <title>Admin Pelindo</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
