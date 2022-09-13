@@ -18,18 +18,18 @@
 
 	<style>
 		.table-title1::before {
-			content: "Jadwal Kedatangan Kapal";
+			content: "Informasi Kedatangan";
 			animation: table-title1 infinite 3s;
 		}
 
 		@keyframes table-title1 {
 
 			0% {
-				content: "Jadwal Kedatangan Kapal";
+				content: "Informasi Kedatangan";
 			}
 
 			50% {
-				content: "Ship Arrival Schedule";
+				content: "Arrival Information";
 			}
 		}
 
