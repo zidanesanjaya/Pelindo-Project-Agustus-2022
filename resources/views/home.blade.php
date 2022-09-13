@@ -36,11 +36,11 @@
                         <th>Logo</th>
                         <th colspan="3">Nama Kapal</th>
                         <th>Jadwal</th>
+                        <th>Tujuan Kedatangan</th>
+                        <th>Tujuan Keberangkatan</th>
                         <th>Kedatangan</th>
 						<th>Keberangkatan</th>
-						<th>Status</th>
-                        <th>Dari</th>
-                        <th>Tujuan</th>
+                        <th>Status</th>
                         <th>Perubahan</th>
                     </tr>
                 </thead>
@@ -58,11 +58,11 @@
                         ?>
                         <td colspan="3">{{$ss->nama_kapal}}</td>
                         <td>{{date("d-M-Y", strtotime($ss->schedule))}}</td>
-						<td>{{$ss->kedatangan}}</td>
-                        <td>{{$ss->keberangkatan}}</td>
-						<td>{{$ss->status}}</td>
                         <td>{{$ss->from}}</td>
                         <td>{{$ss->destination}}</td>
+						<td>{{$ss->kedatangan}}</td>
+                        <td>{{$ss->keberangkatan}}</td> 
+                        <td>{{$ss->status}}</td>
                         <td>
                             <a href="{{route('edit',$ss->id)}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							@csrf
@@ -107,11 +107,11 @@
                 <input type="date" class="form-control" name="schedule" id="schedule">
             </div>
             <div class="form-group mb-3">
-                <label for="from">Dari</label>
+                <label for="from">Tujuan Kedatangan</label>
                 <input type="text" class="form-control" name="from" id="from" value="Balikpapan" readonly>
             </div>
             <div class="form-group mb-3">
-                <label for="destination">Tujuan</label>
+                <label for="destination">Tujuan Keberangkatan</label>
                 <input type="text" class="form-control" name="destination" id="destination">
             </div>
             <div class="form-group mb-3">

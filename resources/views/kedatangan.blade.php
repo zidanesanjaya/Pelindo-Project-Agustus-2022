@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-	<meta http-equiv="refresh" content="5">
+	<meta http-equiv="refresh" content="20">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,10 +15,94 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  
+
+	<style>
+		.table-title1::before {
+			content: "Jadwal Kedatangan Kapal";
+			animation: table-title1 infinite 3s;
+		}
+
+		@keyframes table-title1 {
+
+			0% {
+				content: "Jadwal Kedatangan Kapal";
+			}
+
+			50% {
+				content: "Ship Arrival Schedule";
+			}
+		}
+
+		.kapal1::before {
+			content: "Kapal";
+			animation: kapal1 infinite 3s;
+		}
+
+		@keyframes kapal1 {
+
+			0% {
+				content: "Kapal";
+			}
+
+			50% {
+				content: "Ship";
+			}
+		}
+
+		.jadwal1::before {
+			content: "Jadwal";
+			animation: jadwal1 infinite 3s;
+		}
+
+		@keyframes jadwal1 {
+
+			0% {
+				content: "Jadwal";
+			}
+
+			50% {
+				content: "Schedule";
+			}
+		}
+
+		.tujuan1::before {
+			content: "Tujuan";
+			animation: tujuan1 infinite 3s;
+		}
+
+		@keyframes tujuan1 {
+
+			0% {
+				content: "Tujuan";
+			}
+
+			50% {
+				content: "Destination";
+			}
+		}
+
+		.kedatangan1::before {
+			content: "Kedatangan";
+			animation: Kedatangan1 infinite 3s;
+		}
+
+		@keyframes Kedatangan1 {
+
+			0% {
+				content: "Kedatangan";
+			}
+
+			50% {
+				content: "Arrival";
+			}
+		}
+
+	</style>
+
+	</head>
 	<body onload="startTime()">
 		<div class="table-wrapper">
-			<div class="container">
+			<div>
 				<div class="row">
 					<div class="col">
 						<div class="logo_pelindo">
@@ -26,8 +110,8 @@
 						</div>
 					</div>
 					<div class="col-9">
-						<div class="table-title">
-							<h2>Jadwal <b>Kedatangan</b> Kapal</h2>
+						<div class="table-title" style="right: 50%; margin-right: 1%;">
+							<h2><span class="table-title1"></span></h2>
 						</div>
 					</div>
 				</div>
@@ -40,11 +124,11 @@
 					<thead>
 						<tr>
 							<th>Logo</th>
-							<th colspan="2">Nama Kapal</th>
-							<th>Jadwal</th>
-							<th>Kedatangan</th>
+							<th colspan="2"><span class="kapal1"></span></th>
+							<th><span class="jadwal1"></span></th>
+							<th><span class="tujuan1"></span></th>
+							<th><span class="kedatangan1"></span></th>
 							<th>Status</th>
-							<th>Dari</th>
 						</tr>
 					</thead>
 
@@ -62,9 +146,15 @@
 								?>
 								<td colspan="2">{{$s->nama_kapal}}</td>
 								<td>{{date("d-M-Y", strtotime($s->schedule))}}</td>
-								<td>{{$s->kedatangan}}</td>
-								<td>{{$s->status}}</td>
 								<td>{{$s->from}}</td>
+								<td>{{$s->kedatangan}}</td>
+								@if($s->status == 'Estimasi')
+									<td class = 'text-primary'><b>{{$s->status}}</b></td>
+								@elseif($s->status == 'Bersandar')
+									<td class = 'text-success'><b>{{$s->status}}</b></td>
+								@elseif($s->status == 'Tertunda')
+									<td class = 'text-danger'><b>{{$s->status}}</b></td>
+								@endif
 							</tr>
 						@empty
 							<tr>

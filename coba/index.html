@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0" />
+    <title>Text Animation</title>
+    <style>
+        body {
+            background: green;
+        }
+      
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+      
+        .table-title1::before {
+            content: "Jadwal Keberangkatan Kapal";
+            animation: table-title1 infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes table-title1 {
+      
+            0% {
+                content: "Jadwal Keberangkatan Kapal";
+            }
+      
+            50% {
+                content: "Ship Departure Schedule";
+            }
+        }
+
+        .kapal1::before {
+            content: "Kapal";
+            animation: kapal1 infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes kapal1 {
+      
+            0% {
+                content: "Kapal";
+            }
+      
+            50% {
+                content: "Ship";
+            }
+        }
+
+        .jadwal1::before {
+            content: "Jadwal";
+            animation: jadwal1 infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes jadwal1 {
+      
+            0% {
+                content: "Jadwal";
+            }
+      
+            50% {
+                content: "Schedule";
+            }
+        }
+
+        .tujuan1::before {
+            content: "Tujuan";
+            animation: tujuan1 infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes tujuan1 {
+      
+            0% {
+                content: "Tujuan";
+            }
+      
+            50% {
+                content: "Destination";
+            }
+        }
+
+        .keberangkatan1::before {
+            content: "Keberangkatan";
+            animation: keberangkatan1 infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes keberangkatan1 {
+      
+            0% {
+                content: "Keberangkatan";
+            }
+      
+            50% {
+                content: "Departure";
+            }
+        }
+    </style>
+</head>
+  
+<body>
+    <!-- nav -->
+    <div class="row">
+        <div class="col">
+            <div class="logo_pelindo">
+            <a href="{{url ('http://127.0.0.1:8000/kd')}}">PELINDO</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="table-title" style="right: 50%; margin-right: 1%;">
+                <h2>Jadwal <b>Keberangkatan</b> Kapal</h2>
+                <h2><span class="table-title1"></span></h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- tabel -->
+    <thead>
+        <tr>
+            <th>Logo</th>
+            <th colspan="2"><span class="kapal1"></span></th>
+            <th><span class="jadwal1"></span></th>
+            <th><span class="tujuan1"></span></th>
+            <th><span class="keberangkatan1"></span></th>
+            <th>Status</th>
+        </tr>
+    </thead>
+</body>
+  
+</html>
