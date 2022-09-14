@@ -29,14 +29,14 @@ Route::get('/kd', function () {
     $ship_ = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(10); 
     $kapal = Ship_Ex::all();   
     return view('kedatangan',['ship'=>$ship , 'ship_' => $ship_ , 'kapal'=>$kapal]);
-});
+})->name('kd');
 
 Route::get('/kb', function () {
     $ship = DB::table('Ship')->whereNotNull('kedatangan')->simplePaginate(10);
     $ship_ = DB::table('Ship')->whereNotNull('keberangkatan')->simplePaginate(10); 
     $kapal = Ship_Ex::all();   
     return view('keberangkatan',['ship'=>$ship , 'ship_' => $ship_ , 'kapal'=>$kapal]);
-});
+})->name('kb');
 
 Auth::routes();
 

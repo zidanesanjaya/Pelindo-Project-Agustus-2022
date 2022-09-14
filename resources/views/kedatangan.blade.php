@@ -106,7 +106,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="logo_pelindo">
-						<a href="{{url ('http://127.0.0.1:8000/kb')}}"><img src="{{asset ('/img/logo-pelindo.png')}}" class="logo_pelindo"></a>
+						<a href="{{route('kb')}}"><img src="{{asset ('/img/logo-pelindo.png')}}" class="logo_pelindo"></a>
 						</div>
 					</div>
 					<div class="col-9">
